@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Shop";
+}
+
+@model IEnumerable<BTL_LTWNC.Models.EF.Product>
+
+
+
+@await Html.PartialAsync("~/Views/Shared/_CommonSectionPartialView.cshtml", (string)ViewBag.Title);
+
+<section>
+    <div class="container">
+
+        <form class="d-flex nav__search" role="" asp-controller="Product" asp-action="Search" method="post">
+            <input class="form-control me-2" type="search" name="keyword" onkeyup="search(this)" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                @await Html.PartialAsync("~/Views/Shared/_ProductPartialView.cshtml", item)
+            }
+        </div>
+        <div class="select-input">
+            <span class="select-input__label">
+                Giá
+            </span>
+            <i class="select-input-icon fa-solid fa-chevron-down"></i>
+            <!--List options-->
+            <ul class="select-input__list">
+                <li class="select-input__item">
+                    <a href="/product/sort/ASC" class="select-input__link">Giá: Thấp đến cao</a>
+                </li>
+                <li class="select-input__item">
+                    <a href="/product/sort/DESC" class="select-input__link">Giá: Cao đến thấp</a>
+                </li>
+                <li class="select-input__item">
+                    <a href="/product/sort/smaller200000" class="select-input__link">Giá: < 2000000đ</a>
+                </li>
+                <li class="select-input__item">
+                    <a href="/product/sort/bigger10000000" class="select-input__link"> Giá: between 100000Đ and 200000Đ</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+
+    </script>
+    <script src="~/js/site.js"></script>
+</section>

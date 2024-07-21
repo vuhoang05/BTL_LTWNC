@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Chức Năng Sản Phẩm";
+}
+
+@model IEnumerable<BTL_LTWNC.Models.EF.Product>
+
+
+
+@await Html.PartialAsync("~/Views/Shared/_CommonSectionPartialView.cshtml", (string)ViewBag.Title);
+
+<section>
+    <div class="select-input">
+        <span class="select-input__label">
+           MENU Các chức năng của sản phẩm 
+        </span>
+        <i class="select-input-icon fa-solid fa-chevron-down"></i>
+        <!--List options-->
+        <ul class="select-input__list">
+            <li class="select-input__item">
+                <a href="/admin/Product/ThemSanPham" class="select-input__link">Chức năng Thêm Sản Phẩm </a>
+            </li>
+            <li class="select-input__item">
+                <a href="/admin/Product/QuanLySanPham" class="select-input__link">Chức năng sửa sản phẩm </a>
+            </li>
+            <li class="select-input__item">
+                <a href="/admin/Product/QuanLySanPham" class="select-input__link">Chức năng xóa sản phẩm </a>
+            </li>
+            <li class="select-input__item">
+                <a href="/admin/Product/QuanLySanPham" class="select-input__link">Chức năng xem danh sách  sản phẩm </a>
+            </li>
+
+        </ul>
+    </div>
+    <div class="container">
+
+     
+      @*   <div class="row">
+            @foreach (var item in Model)
+            {
+                @await Html.PartialAsync("~/Views/Shared/_ProductPartialView.cshtml", item)
+            }
+        </div> *@
+    </div>
+
+  
+    <script>
+
+    </script>
+    <script src="~/js/site.js"></script>
+</section>

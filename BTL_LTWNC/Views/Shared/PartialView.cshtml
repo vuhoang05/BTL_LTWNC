@@ -1,0 +1,160 @@
+﻿@using Microsoft.AspNetCore.Http;
+@{
+    var us = ViewContext.HttpContext.Session.GetString("UserName");
+    var role = ViewContext.HttpContext.Session.GetInt32("Role");
+}
+
+<link rel="stylesheet" href="./css/header.css" asp-append-version="true" />
+
+<header class="header" id="myHeader">
+    <div class="container">
+        <div class="row">
+            <div class="nav__wrapper d-flex justify-content-between align-items-center">
+                <div class="logo">
+                    <a asp-area="" asp-controller="Home" asp-action="Index">
+                        <h1><span>L</span>aziza</h1>
+                    </a>
+                </div>
+                <div class="navigation">
+                    <ul class="menu d-flex align-items-center text-uppercase">
+                        <li class="nav__item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="nav__item"><a asp-controller="Product" asp-action="getAllProduct">Shop</a></li>
+                        <li class="nav__item"><a asp-controller="Cart" asp-action="Index">Cart</a></li>
+                        <li class="nav__item"><a asp-controller="Product2" asp-action="Index">NewPage</a></li>
+
+
+                        @if (role == 1)
+                        {
+                            <li class="nav__item"><a href="/admin/">Admin</a></li>
+                        }
+
+                    </ul>
+                </div>
+                <div class="nav__icons d-flex align-items-center justify-content-center gap-3">
+                    <span class="cart__icon">
+                        <a asp-controller="Cart" asp-action="Index">
+                            <i class='bx bx-shopping-bag'></i>
+                            <span id="cart_count" class="badge">0</span>
+                        </a>
+                    </span>
+                    @if (us == null)
+                    {
+                        <span class="user__icon">
+                            <a href="/login">
+                                <i class='bx bx-user'></i>
+                            </a>
+                        </span>
+                    }
+                    else
+                    {
+                        <a asp-controller="Account" asp-action="Logout"> logout</a>
+                    }
+                    @if (us != null)
+                    {
+                        <p>xin chao @us</p>
+                    }
+                    <div class="mobile__icon">
+                        <span><i class='bx bx-menu'></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+
+    <div class="select-input">
+        <span class="select-input__label">
+            Các chức năng của sản phẩm
+        </span>
+        <i class="select-input-icon fa-solid fa-chevron-down"></i>
+        <!--List options-->
+        <ul class="select-input__list">
+            <li class="select-input__item">
+                <a href="/admin/Product/ThemSanPham" class="select-input__link">Chức năng Thêm Sản Phẩm </a>
+            </li>
+            <li class="select-input__item">
+                <a href="/admin/Product/QuanLySanPham" class="select-input__link">Chức năng sửa sản phẩm </a>
+            </li>
+            <li class="select-input__item">
+                <a href="/admin/Product/QuanLySanPham" class="select-input__link">Chức năng xóa sản phẩm </a>
+            </li>
+            <li class="select-input__item">
+                <a href="/admin/Product/QuanLySanPham" class="select-input__link">Chức năng xem danh sách  sản phẩm </a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-3">
+                <div class="footer__logo">
+                    <h1><a asp-area="" asp-controller="Home" asp-action="Index"><span>L</span>aziza</a></h1>
+                </div>
+                <p class="mt-2">
+                    Các thành viên trong nhóm <br /> Lê Thị Giang , Đặng Ngọc Phúc , Nguyễn Mạnh trường , Bùi Minh Chí
+                </p>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="footer__quick-links">
+                    <h4 class="quick-links__title mb-2">Navigation</h4>
+                    <ul class="list-group">
+                        <li class="ps-0 border-0 list-group-item">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="ps-0 border-0 list-group-item">
+                            <a href="#">Shop</a>
+                        </li>
+                        <li class="ps-0 border-0 list-group-item">
+                            <a href="#">Cart</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="footer__quick-links">
+                    <h4 class="quick-links__title mb-2">About us</h4>
+                    <ul class="list-group">
+                        <li class="ps-0 border-0 list-group-item">
+                            <a href="#">Sitemap</a>
+                        </li>
+                        <li class="ps-0 border-0 list-group-item">
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                        <li class="ps-0 border-0 list-group-item">
+                            <a href="#">Help</a>
+                        </li>
+                        <li class="ps-0 border-0 list-group-item">
+                            <a href="#">Store Locations</a>
+                        </li>
+                        <li class="ps-0 border-0 list-group-item">
+                            <a href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 col-lg-3">
+                <div class="footer__quick-links">
+                    <h4 class="quick-links__title">Payment Methods</h4>
+
+                    <div class="mt-4">
+                        <img src="~/public/images/payment.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="footer__copyright mt-3">
+                    <p class="text-center mt-2">
+                        © 2024 Copyright, All Rights Reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
