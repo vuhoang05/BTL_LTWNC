@@ -3,7 +3,7 @@
 }
 
 .hero__content h2 {
-    color: #dc143c;
+    color: black;
     font-size: 6rem;
     font-family: "Namdhinggo", serif;
     font-weight: 900;
@@ -12,21 +12,21 @@
 }
 
 .hero__content p:nth-child(1) {
-    color: #dc143c;
+    color: #09B44E;
     font-size: 1.1rem;
 }
 
 .hero__content p {
-    width: 55%;
+    width: 70%;
     font-weight: 700;
     text-align: justify;
 }
 
 .buy__btn {
     outline: none;
-    background: #dc143c;
+    background: #09B44E;
     padding: 10px 22px;
-    border-radius: 5px;
+    border-radius: 7px;
     font-size: 1.1rem;
     color: white;
     transition: background 0.3s ease;

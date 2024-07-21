@@ -10,7 +10,7 @@
 }
 
     .footer__logo h1 a span {
-        color: #dc143c;
+        color: #09B44E;
     }
 
 .footer__logo {
@@ -26,7 +26,7 @@
 }
 
     .footer__quick-links ul li a:hover {
-        color: #dc143c !important;
+        color: #09B44E !important;
         font-weight: 600;
     }
 

@@ -9,7 +9,8 @@
 }
 
     .logo h1 {
-        color: #111;
+        /*color: #111;*/
+        color: #09B44E;
         letter-spacing: 2px;
         font-family: "Namdhinggo", serif;
         font-weight: 900;
@@ -18,7 +19,7 @@
     }
 
         .logo h1 span {
-            color: #dc143c;
+            color: #006400;
         }
 
 .menu {
@@ -37,7 +38,7 @@
 }
 
     .nav__item:hover {
-        color: #ff0800;
+        color: #09B44E;
         font-weight: 600;
         scale: 1.1;
     }
@@ -62,7 +63,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #dc143c;
+    background: #09B44E;
     color: white;
     border-radius: 50%;
     font-size: 0.7rem;
