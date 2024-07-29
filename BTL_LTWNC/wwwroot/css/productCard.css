@@ -1,6 +1,8 @@
 ﻿.product__img img {
     border-radius: 10px;
     cursor: pointer;
+    width: 300px; /* Điều chỉnh kích thước ảnh */
+    margin: 10px; /* Khoảng cách giữa các ảnh */
 }
 
 .product__img img:hover {
@@ -24,19 +26,28 @@
     letter-spacing: 0.8px;
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 720px) {
     .product__name {
         font-size: 1.4rem;
     }
+    .product__img img {
+        border-radius: 10px;
+        cursor: pointer;
+        width: 100px; /* Điều chỉnh kích thước ảnh */
+        margin: 10px; /* Khoảng cách giữa các ảnh */
+    }
 
     .price {
-        font-size: 1.2rem;
+        font-size: 0.8rem;
     }
     @media (max-width: 768px) {
         .dt-4 {
             flex: 0 0 auto;
             width: 50%;
         }
+    }
+    .Descreption {
+        font-size: 0.6rem;
     }
 
 }

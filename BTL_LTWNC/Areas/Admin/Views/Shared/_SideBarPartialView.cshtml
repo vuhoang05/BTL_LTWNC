@@ -6,7 +6,7 @@
 
 <link rel="stylesheet" href="~/AdminAssets/css/sidebar.css" asp-append-version="true" />
 
-<aside id="sidebar">
+@* <aside id="sidebar">
     <div class="d-flex">
         <span class="toggle-btn">
             <i class="lni lni-grid-alt"></i>
@@ -70,6 +70,82 @@
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" asp-area="Admin" asp-controller="Product" asp-action="Create">Thêm sản phẩm</a>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+    <div class="sidebar-footer p-1">
+        <a href="/" class="sidebar-footer-link">
+            <i class="lni lni-exit"></i>
+            <span>Logout</span>
+        </a>
+    </div>
+</aside> *@
+<aside id="sidebar">
+    <div class="d-flex">
+        <span class="toggle-btn">
+            <i class="lni lni-grid-alt"></i>
+        </span>
+        <div class="sidebar-logo">
+            <a href="/">ADMIN</a>
+        </div>
+    </div>
+    <ul class="sidebar-nav">
+
+        <li class="sidebar-item">
+            <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+               data-bs-target="#order" aria-controls="order">
+                <span class="text-uppercase">Order management</span>
+            </a>
+            <ul id="order" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                <li class="sidebar-item">
+                    <a class="sidebar-link" asp-area="Admin" asp-controller="Order" asp-action="Index">Order list</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="sidebar-item">
+            <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+               data-bs-target="#customer" aria-controls="customer">
+                <span class="text-uppercase">User management</span>
+            </a>
+            <ul id="customer" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                <li class="sidebar-item">
+                    <a class="sidebar-link" asp-area="Admin" asp-controller="User" asp-action="Index">User list</a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" asp-area="Admin" asp-controller="User" asp-action="Create">Add user</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="sidebar-item">
+            <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+               data-bs-target="#category" aria-controls="category">
+                <span class="text-uppercase">Category management</span>
+            </a>
+            <ul id="category" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                <li class="sidebar-item">
+                    <a class="sidebar-link" asp-area="Admin" asp-controller="ProductCategory" asp-action="Index">Category list</a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" asp-area="Admin" asp-controller="ProductCategory" asp-action="Create">Add category</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="sidebar-item">
+            <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+               data-bs-target="#product" aria-controls="product">
+                <span class="text-uppercase">Product management</span>
+            </a>
+            <ul id="product" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                <li class="sidebar-item">
+                    <a class="sidebar-link" asp-area="Admin" asp-controller="Product" asp-action="Index">Product list</a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" asp-area="Admin" asp-controller="Product" asp-action="Create">Add product</a>
                 </li>
             </ul>
         </li>

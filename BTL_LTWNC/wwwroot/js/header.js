@@ -10,3 +10,17 @@ function myFunction() {
         header.classList.remove("sticky");
     }
 }
+//responsive
+const mobileIcon = document.querySelector('.mobile__icon');
+const mobileMenu = document.querySelector('.mobile__menu');
+
+mobileIcon.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+});
+
+// Tùy chọn: Đóng menu khi click ngoài
+document.addEventListener('click', (event) => {
+    if (!event.target.closest('.mobile__menu') && !event.target.closest('.mobile__icon')) {
+        mobileMenu.classList.remove('active');
+    }
+});

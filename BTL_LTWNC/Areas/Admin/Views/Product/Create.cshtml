@@ -7,33 +7,33 @@
 @model BTL_LTWNC.Models.EF.Product
 
 <div class="p-5">
-    <h1 class="text-center text-uppercase font-bold">Thêm sản phẩm</h1>
+    <h1 class="text-center text-uppercase font-bold">Add product</h1>
 
     <form method="post" asp-area="Admin" asp-controller="Product" asp-action="Create" enctype="multipart/form-data">
         <div class="mb-3">
-            <label class="form-label">Tên sản phẩm</label>
+            <label class="form-label">Name</label>
             <input type="text" class="form-control" asp-for="sProductName">
             <span asp-validation-for="sProductName" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Loại sản phẩm</label>
+            <label class="form-label">ProductCategory</label>
             <select asp-for="iProductCategoryID" class="form-control" asp-items="ViewBag.cateList"></select>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Giá Tiền</label>
+            <label class="form-label">Price</label>
             <input type="number" class="form-control" asp-for="fPrice" min="0">
             <span asp-validation-for="fPrice" class="text-danger"></span>
         </div>
         <div class="mb-3">
-            <label class="form-label">Mô tả</label>
+            <label class="form-label">Descreption</label>
             <input type="text" class="form-control" asp-for="Descreption">
             <span asp-validation-for="Descreption" class="text-danger"></span>
         </div>
         <div class="row mb-3">
             <div class="col-8">
-                <label class="form-label">Ảnh</label>
+                <label class="form-label">ImagePath</label>
                 <input type="file" id="ChooseImg" class="form-control" asp-for="ImagePath">
                 <span asp-validation-for="ImagePath" class="text-danger"></span>
             </div>
@@ -45,7 +45,7 @@
         </div>
 
         <div class="d-flex gap-3">
-            <a class="btn btn-danger" href="/admin/product/QuanLySanPham">Quay lại</a>
+            <a class="btn btn-danger" href="/admin/product/QuanLySanPham">Back</a>
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>

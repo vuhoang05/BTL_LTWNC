@@ -20,6 +20,8 @@ namespace BTL_LTWNC.Controllers
         public async Task<IActionResult> getAllProduct()
         {
             var data = await _dbContext.tblProduct.ToListAsync();
+            var categories = await _dbContext.tblProductCategory.ToListAsync();
+            ViewData["Categories"] = categories;
 
             return View(data);
         }

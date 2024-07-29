@@ -47,11 +47,11 @@
                     }
                     else
                     {
-                        <a asp-controller="Account" asp-action="Logout"> logout</a>
+                        <a asp-controller="Account" asp-action="Logout"> Logout</a>
                     }
                     @if (us != null)
                     {
-                        <p>xin chao @us</p>
+                        <p>Welcome: @us</p>
                     }
                     <div class="mobile__icon">
                         <span><i class='bx bx-menu'></i></span>
@@ -59,6 +59,22 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="mobile__menu">
+        <ul class="mobile__menu-list text-uppercase">
+            <li class="mobile__menu-item"><a asp-controller="Home" asp-action="Index">MENU LIST</a></li>
+            <li class="mobile__menu-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li class="mobile__menu-item"><a asp-controller="Product" asp-action="getAllProduct">Shop</a></li>
+            <li class="mobile__menu-item" "><a asp-controller="Cart" asp-action="Index">Cart</a></li>
+            @* <li class="nav__item"><a asp-controller="Product2" asp-action="Index">NewPage</a></li> *@
+            <li class="mobile__menu-item" "><a asp-controller="About" asp-action="Index">About Us</a></li>
+
+            @if (role == 1)
+            {
+                <li class="mobile__menu-item"><a href="/admin/">Admin</a></li>
+            }
+            <span class="mobile__menu-close">×</span>
+        </ul>
     </div>
 </header>
 

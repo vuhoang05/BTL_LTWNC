@@ -38,6 +38,13 @@ namespace BTL_LTWNC.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+        public async Task<IActionResult> Test()
+        {
+            var featureProduct = await _dbContext.tblProduct.FromSqlRaw("spGetFeatureProduct").ToListAsync();
+
+            return View(featureProduct);
+
+        }
 
     }
 }

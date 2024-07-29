@@ -8,7 +8,7 @@
 
 <div class="p-5">
 
-    <h1 class="text-center text-uppercase font-bold pb-2">Thông tin hóa đơn</h1>
+    <h1 class="text-center text-uppercase font-bold pb-2">Order management</h1>
 
     <div class="row">
         <dt class="col-sm-2">
@@ -19,28 +19,28 @@
         </dd>
 
         <dt class="col-sm-2">
-            Ngày tạo
+            Created
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.dOrderDate)
         </dd>
 
         <dt class="col-sm-2">
-            Người nhận:
+            Receiver:
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.sCustomerName)
         </dd>
 
         <dt class="col-sm-2">
-            Số điện thoại:
+            PhoneNumber:
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.sCustomerPhone)
         </dd>
 
         <dt class="col-sm-2">
-            Địa chỉ:
+            Address:
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.sCustomerAddress)
@@ -48,7 +48,7 @@
     </div>
 
     <div class="mt-2 mb-5">
-        <a href="/admin/Order/QuanLyDonHang" class="btn btn-small btn-danger" style="color: white !important">Quay lại</a>
+        <a href="/admin/Order/QuanLyDonHang" class="btn btn-small btn-danger" style="color: white !important">Back</a>
     </div>
 
     <hr />
@@ -57,10 +57,10 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th class="text-center">Mã món</th>
-                    <th class="text-center">Tên món</th>
-                    <th class="text-center">Số lượng</th>
-                    <th class="text-center">Đơn giá</th>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">Name's foof</th>
+                    <th class="text-center">Quanlity</th>
+                    <th class="text-center">Price</th>
                 </tr>
             </thead>
             <tbody>

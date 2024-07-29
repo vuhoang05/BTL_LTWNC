@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "Home Page";
+    var us = ViewContext.HttpContext.Session.GetString("UserName");
+}
+
+@model IEnumerable<BTL_LTWNC.Models.EF.Product>
+
+@foreach (var item in Model)
+{
+    @await Html.PartialAsync("~/Views/Shared/_ProductPartialView.cshtml", item)
+}

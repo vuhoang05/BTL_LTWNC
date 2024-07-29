@@ -8,6 +8,7 @@
 @model IEnumerable<BTL_LTWNC.Models.EF.Product>
 
 
+
 @* 
 @await Html.PartialAsync("~/Views/Shared/_CommonSectionPartialView.cshtml", (string)ViewBag.Title); *@
 
@@ -18,7 +19,9 @@
             <input class="form-control me-2" type="search" name="keyword" onkeyup="search(this)" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
-        <div class="select-input mt-1">
+
+        
+       @*  <div class="select-input mt-1">
             <span class="select-input__label">
                 Sắp xếp theo 
             </span>
@@ -38,6 +41,9 @@
                     <a href="/product/sort/bigger10000000" class="select-input__link"> Giá: between 100000Đ and 200000Đ</a>
                 </li>
             </ul>
+        </div> *@
+
+            
         </div>
         <div class="row">
             @foreach (var item in Model)
@@ -47,8 +53,6 @@
         </div>
         
     </div>
-    <script>
-
-    </script>
+    
     <script src="~/js/site.js"></script>
 </section>

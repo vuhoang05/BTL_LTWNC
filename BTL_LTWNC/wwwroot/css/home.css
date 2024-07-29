@@ -36,6 +36,37 @@
         color: white;
         scale: 1.1 !important;
     }
+@media (max-width: 768px) {
+    .hero__section {
+        padding: 30px 0;
+    }
+
+
+    .hero__content p {
+        width: 70%;
+        font-weight: 700;
+        text-align: justify;
+        font-size: 1.2rem;
+    }
+
+
+    .hero__content {
+        text-align: center;
+    }
+
+        .hero__content h2 {
+            font-size: 1.2rem;
+        }
+
+        .hero__content p {
+            width: 100%;
+        }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
 
 
 .service__item {

@@ -1,8 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
-
-@model BTL_LTWNC.Models.EF.Product
+﻿@model BTL_LTWNC.Models.EF.Product
 
 <link rel="stylesheet" href="./css/productCard.css" asp-append-version="true" />
 
@@ -14,11 +10,10 @@
 		</div>
 
 		<h3 class="product__name p-2"><a href="#"></a>@Model.sProductName</h3>
-		<span class="Descreption">@Model.Descreption</span>
+		<span class="Mô tả ">@Model.Descreption</span>
 		<div class="card__bottom ps-2 pe-2 pb-2 d-flex align-items-center justify-content-between">
 			<span class="price">@Model.fPrice.ToString("C0")</span>
 		</div>
 
 	</div>
 </div>
-
