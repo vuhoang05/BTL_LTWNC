@@ -44,12 +44,12 @@
         </div> *@
 
             
-        </div>
         <div class="row">
             @foreach (var item in Model)
             {
                 @await Html.PartialAsync("~/Views/Shared/_ProductPartialView.cshtml", item)
             }
+        </div>
         </div>
         
     </div>
