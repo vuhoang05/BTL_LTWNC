@@ -1,3 +1,10 @@
+
+Đề thi: 
+Câu1: Tạo thêm 1 trang mới chọn 1 bảng để hiển thị. Ví dụ tạo thêm 1 trang sản phẩm mới đề CSS theo yêu cầu Website thì hiển thị 3sp thành 1 hãng, mobile 1sp 1 hàng. Trang mới được click từ 1 trang cũ trong Btl
+Câu 2: Thêm 1 cột dữ liệu vào 1 bảng nào đó(check dữ liệu có 8 ký tự và ít nhất có 1 số)
+ Insert dữ liệu cái bàng vừa thêm cột vào, thực hiện thay đổi cac chung năng them sửa xóa phù hợp
+cau3 từ bảng chọn ở câu 1 thêm nút xóa ở mỗi sản phẩm thực hiện xóa bằng ajax
+
 CREATE DATABASE sqlQuanLyBanDoAn22 ON 
 (
 	NAME = 'sqlQuanLyBanDoAn,',
