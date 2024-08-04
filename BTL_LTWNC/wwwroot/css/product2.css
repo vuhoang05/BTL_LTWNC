@@ -1,0 +1,17 @@
+﻿.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product__item {
+    flex-basis: calc(33.33% - 20px);
+    margin: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .product__item {
+        flex-basis: 100%;
+        margin: 10px 0;
+    }
+}

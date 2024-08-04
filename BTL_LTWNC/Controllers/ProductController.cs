@@ -20,8 +20,13 @@ namespace BTL_LTWNC.Controllers
         public async Task<IActionResult> getAllProduct()
         {
             var data = await _dbContext.tblProduct.ToListAsync();
+
             var categories = await _dbContext.tblProductCategory.ToListAsync();
-            ViewData["Categories"] = categories;
+            if (categories != null)
+            {
+                ViewData["Categories"] = categories;
+            }
+            
 
             return View(data);
         }
@@ -50,8 +55,9 @@ namespace BTL_LTWNC.Controllers
 
             return View(product);
         }
-
+      
         [HttpPost]
+        [Route("shop")]
         public IActionResult Search(string keyword)
         {
             var products = _dbContext.tblProduct.FromSqlRaw("select * from tblProduct where sProductName like N'%" + keyword + "%' ");
@@ -82,5 +88,14 @@ namespace BTL_LTWNC.Controllers
             return View("getAllProduct", products);
         }
 
+        [Route("/shop/{categoryId}")]
+        public async Task<IActionResult> GetProductByCategory(int categoryId)
+        {
+            var products = await _dbContext.tblProduct.Where(p => p.iProductCategoryID == categoryId).ToListAsync();
+            var categories = await _dbContext.tblProductCategory.ToListAsync();
+            ViewData["Categories"] = categories;
+            return View("getAllProduct", products);
+        }
+        }
+
     }
-}

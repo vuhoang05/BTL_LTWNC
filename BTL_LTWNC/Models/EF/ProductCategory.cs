@@ -13,5 +13,7 @@ namespace BTL_LTWNC.Models.EF
 
         public string? sCategoryName { get; set; }
 
+      
+
     }
 }

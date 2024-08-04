@@ -6,8 +6,7 @@
 }
 
 @model IEnumerable<BTL_LTWNC.Models.EF.Product>
-
-
+<link rel="stylesheet" href="./css/header.css" asp-append-version="true" />
 
 @* 
 @await Html.PartialAsync("~/Views/Shared/_CommonSectionPartialView.cshtml", (string)ViewBag.Title); *@
@@ -44,15 +43,42 @@
         </div> *@
 
             
-        <div class="row">
+       @*  <div class="row">
             @foreach (var item in Model)
             {
                 @await Html.PartialAsync("~/Views/Shared/_ProductPartialView.cshtml", item)
             }
         </div>
+        </div> *@
+
+      @*   <div class="category-list">
+            <h2>List category</h2>
+            <ul>
+                @if (ViewData["Categories"] != null)
+                {
+                                @foreach (var category in ViewData["Categories"] as IEnumerable<BTL_LTWNC.Models.EF.ProductCategory>)
+                                {
+                                    <li>
+                                       @*  <a href="shop/@category.iCategoryID">@category.sCategoryName</a> *@
+                                        @* <a asp-controller="Product" asp-action="GetProductByCategory" asp-route-id="@category.iCategoryID">@category.sCategoryName</a> *@
+                         @*            </li>
+                                }
+                }
+            </ul>
+        </div> *@ 
+
+        <div class="product-list">
+            <h2> List Product</h2>
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    @await Html.PartialAsync("~/Views/Shared/_ProductPartialView.cshtml", item)
+                }
+            </div>
         </div>
-        
     </div>
+
+
     
     <script src="~/js/site.js"></script>
 </section>

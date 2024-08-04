@@ -13,7 +13,7 @@ namespace BTL_LTWNC.Controllers
             _dbContext = dbContext;
         }
         [HttpGet]
-        [Route("Chức Năng Sản Phẩm")]
+        [Route("shop2")]
         public async Task<IActionResult> index()
         {
             var data = await _dbContext.tblProduct.ToListAsync();

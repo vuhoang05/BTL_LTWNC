@@ -8,8 +8,8 @@
 @model IEnumerable<BTL_LTWNC.Models.EF.Product>
 
 
+<link rel="stylesheet" href="./css/product2.css" asp-append-version="true" />
 
-@await Html.PartialAsync("~/Views/Shared/_CommonSectionPartialView.cshtml", (string)ViewBag.Title);
 
 <section>
     <div class="select-input">
@@ -34,15 +34,40 @@
 
         </ul>
     </div>
-    <div class="container">
-
-     
-      @*   <div class="row">
+   @*  <div class="product-list">
+        <h2> List Product</h2>
+        <div class="row">
             @foreach (var item in Model)
             {
                 @await Html.PartialAsync("~/Views/Shared/_ProductPartialView.cshtml", item)
             }
-        </div> *@
+        </div>
+    </div> *@
+    <div class="container">
+
+
+        <div class="product-list">
+            @if (Model != null)
+            {
+                @foreach (var item in Model)
+                {
+                    <div class="product__item p-2">
+                        <div class="product__img">
+                            <a asp-controller="Product" asp-action="ProductDetails" asp-route-id="@item.iProductID"><img src="~/public/images/@item.sImageUrl" alt=""></a>
+                        </div>
+
+                        <h3 class="product__name p-2"><a href="#"></a>@item.sProductName</h3>
+                        <a class="Descreption">@item.Descreption</a>
+                        <div class="card__bottom ps-2 pe-2 pb-2 d-flex align-items-center justify-content-between">
+                            <a class="price">
+                                @item.fPrice $
+                            </a>
+                        </div>
+
+                    </div>
+                }
+            }
+        </div>
     </div>
 
   
